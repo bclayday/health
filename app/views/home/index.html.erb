@@ -1,0 +1,26 @@
+<h1>Health Wealth Happyness </h1>
+<!-- A hidden input named public_token will be appended to this form
+once the user has completed the Link flow. Link will then submit the
+form, sending the public_token to your server. -->
+<form id="some-id" method="POST" action="/authenticate"></form>
+
+<!-- See the Parameter Reference for additional documentation. -->
+<script
+  src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"
+  data-client-name="Client Name"
+  data-form-id="some-id"
+  data-key="test_key"
+  data-product="auth"
+  data-env="tartan">
+</script>
+
+<div id="user-widget">
+  <% if current_user %>
+    Welcome <strong><%= current_user.name %></strong>!<br />
+
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Runkeeper", "/auth/runkeeper" %><br />
+    <%= link_to "Sign In Other Way", create_session_path(origin: "not omniauth") %>
+  <% end %>
+</div>

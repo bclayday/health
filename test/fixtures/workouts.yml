@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-02-22 08:59:17
+  mood: MyString
+  length: MyString
+
+two:
+  date: 2017-02-22 08:59:17
+  mood: MyString
+  length: MyString
